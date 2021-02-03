@@ -1,9 +1,18 @@
-import moduleName from './a'
+@isTestable(true)
+class MyClass {}
 
-const b = moduleName()
-
-const x = function a(){
-	console.log('13 :>> ', 13);
+function isTestable(value: any) {
+	return function decorator(target: any) {
+		target.isTestable = value
+	}
 }
 
-export const a = 1
+function sleep() {
+	return new Promise((resolve, reject) => {
+		setTimeout(() => {}, 100)
+	})
+}
+
+sleep()
+
+export const a = new MyClass()
