@@ -1,3 +1,5 @@
+import s from './a'
+
 @isTestable(true)
 class MyClass {}
 
@@ -12,6 +14,7 @@ function sleep() {
 		setTimeout(() => {}, 100)
 	})
 }
+s()
 
 sleep()
 

@@ -3,7 +3,8 @@
 	"editor.insertSpaces": false,
     "editor.suggestSelection": "first",
 	"editor.codeActionsOnSave": {
-        "source.fixAll.eslint": true
+        "source.fixAll.eslint": true,
+		"source.fixAll.stylelint": true
 	},
     "eslint.codeActionsOnSave.mode": "all",
     "eslint.validate": [
