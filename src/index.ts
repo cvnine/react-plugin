@@ -1,7 +1,9 @@
-import s from './a'
+import s, { MyClass as Cy } from './ttt/a'
 
 @isTestable(true)
 class MyClass {}
+
+export const xxx = new Cy()
 
 function isTestable(value: any) {
 	return function decorator(target: any) {
@@ -9,9 +11,14 @@ function isTestable(value: any) {
 	}
 }
 
+export type m = number
+
 function sleep() {
+	let bs: m = 1
 	return new Promise((resolve, reject) => {
-		setTimeout(() => {}, 100)
+		setTimeout(() => {
+			bs = bs + 1
+		}, 100)
 	})
 }
 s()

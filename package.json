@@ -2,18 +2,19 @@
   "name": "react-plugin",
   "version": "1.0.0",
   "description": "react plugin",
-  "main": "dist/bundle.cjs.js",
-  "module": "dist/bundle.es.js",
+  "main": "dist/cjs/bundle.js",
+  "module": "dist/esm/index.js",
   "license": "MIT",
   "files": [
     "dist"
   ],
+  "types": "dist/types/index.d.ts",
   "keywords": [
     "react",
     "plugin"
   ],
   "scripts": {
-    "build": "rollup -c",
+    "build": "rollup -c && tsc -d --emitDeclarationOnly --declarationDir dist/types",
     "lint": "prettier --write ./src/**/* && eslint --fix"
   },
   "peerDependencies": {
