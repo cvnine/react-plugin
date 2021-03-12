@@ -1,5 +1,7 @@
 import s, { MyClass as Cy } from './ttt/a'
 
+import React from 'react'
+
 @isTestable(true)
 class MyClass {}
 
@@ -26,3 +28,7 @@ s()
 sleep()
 
 export const a = new MyClass()
+
+export default function TTT() {
+	return <div></div>
+}

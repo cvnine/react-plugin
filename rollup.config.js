@@ -9,7 +9,7 @@ import url from '@rollup/plugin-url'
 
 export default [
 	{
-		input: 'src/index.ts',
+		input: 'src/index.tsx',
 		output: [
 			{
 				file: 'dist/umd/bundle.js',
@@ -34,7 +34,7 @@ export default [
 		],
 	},
 	{
-		input: 'src/index.ts',
+		input: 'src/index.tsx',
 		output: [
 			{
 				// file: 'es/bundle.es.js',
@@ -61,6 +61,6 @@ export default [
 			json(),
 			url(),
 		],
-		external: [/@babel\/runtime/],
+		external: [/@babel\/runtime/, 'react', 'react-dom'],
 	},
 ]
