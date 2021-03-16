@@ -6,6 +6,8 @@ import resolve from '@rollup/plugin-node-resolve'
 import strip from '@rollup/plugin-strip'
 import json from '@rollup/plugin-json'
 import url from '@rollup/plugin-url'
+import image from '@rollup/plugin-image'
+import del from '@rollup/plugin-delete'
 
 export default [
 	{
@@ -19,6 +21,7 @@ export default [
 			},
 		],
 		plugins: [
+			del(),
 			typescript(),
 			resolve(),
 			commonjs(),
@@ -49,6 +52,7 @@ export default [
 			},
 		],
 		plugins: [
+			del(),
 			typescript(),
 			resolve(),
 			commonjs(),
