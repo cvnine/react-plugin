@@ -12,6 +12,10 @@ React Component 组件打包模板
 #### 样式问题
 本项目主采用 styled-components 因此不存在类似于 postcss 的使用。但如果想要使用 css，scss，less 等需要注意以下几点。
 * 图片（背景图）引入，依然走 base64，原因同上。
-* 样式和组件一起按需加载问题。这个时候需要 postcss 采用 inject 模式，
+* 样式和组件一起按需加载问题。这个时候需要 postcss 采用 inject 模式，这个时候样式是作为js动态插入到head里的，想要覆盖则存在权重问题，但问题不大。
+
+样式与图片相关打包可使用本项目 css 分支进行测试。
+
+参考 [掘金文章](https://juejin.cn/post/6913715479160815623)
 
 

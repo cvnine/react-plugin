@@ -5,13 +5,13 @@ import commonjs from '@rollup/plugin-commonjs'
 import resolve from '@rollup/plugin-node-resolve'
 import strip from '@rollup/plugin-strip'
 import json from '@rollup/plugin-json'
-import url from '@rollup/plugin-url'
+// import url from '@rollup/plugin-url'
 import image from '@rollup/plugin-image'
-import del from '@rollup/plugin-delete'
+import del from 'rollup-plugin-delete'
 
 export default [
 	{
-		input: 'src/index.tsx',
+		input: 'src/index.ts',
 		output: [
 			{
 				file: 'dist/umd/bundle.js',
@@ -21,7 +21,7 @@ export default [
 			},
 		],
 		plugins: [
-			del(),
+			del({ targets: 'dist/*' }),
 			typescript(),
 			resolve(),
 			commonjs(),
@@ -32,12 +32,12 @@ export default [
 			}),
 			strip(),
 			json(),
-			url(),
+			image(),
 			terser(),
 		],
 	},
 	{
-		input: 'src/index.tsx',
+		input: 'src/index.ts',
 		output: [
 			{
 				// file: 'es/bundle.es.js',
@@ -52,7 +52,6 @@ export default [
 			},
 		],
 		plugins: [
-			del(),
 			typescript(),
 			resolve(),
 			commonjs(),
@@ -63,7 +62,7 @@ export default [
 			}),
 			strip(),
 			json(),
-			url(),
+			image(),
 		],
 		external: [/@babel\/runtime/, 'react', 'react-dom'],
 	},

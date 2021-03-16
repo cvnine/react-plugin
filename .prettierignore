@@ -1,3 +1,7 @@
 dist/*
 package-lock.json
 yarn.lock
+*.png
+*.jpg
+*.jpeg
+*.gif
