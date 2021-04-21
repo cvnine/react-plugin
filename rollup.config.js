@@ -47,8 +47,11 @@ export default [
 				dir: 'dist/esm',
 			},
 			{
-				file: 'dist/cjs/bundle.js',
+				dir: 'dist/cjs',
 				format: 'cjs',
+				preserveModules: true,
+				preserveModulesRoot: 'src',
+				exports: 'named',
 			},
 		],
 		plugins: [
