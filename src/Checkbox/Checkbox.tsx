@@ -2,7 +2,7 @@ import React from 'react'
 
 import png from '../assets/1.png'
 
-// import './style.less'
+import './style.less'
 
 export interface CheckboxProps {
 	type?: string

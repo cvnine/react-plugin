@@ -51,7 +51,7 @@ export default [
 			}),
 			strip(),
 			json(),
-			// postcss(postcssConfig),
+			postcss(postcssConfig),
 			image(),
 			// postcssInject2Css({
 			// 	exclude: /\/node_modules\//
