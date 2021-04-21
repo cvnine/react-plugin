@@ -29,35 +29,36 @@ const postcssConfig = {
 }
 
 export default [
-	// {
-	// 	input: 'src/index.ts',
-	// 	output: [
-	// 		{
-	// 			file: 'dist/umd/bundle.js',
-	// 			format: 'umd',
-	// 			name: 'rcPlugin',
-	// 			sourcemap: true,
-	// 		},
-	// 	],
-	// 	plugins: [
-	// 		typescript(),
-	// 		resolve(),
-	// 		commonjs(),
-	// 		babel({
-	// 			extensions: ['.ts', '.tsx'],
-	// 			babelHelpers: 'runtime',
-	// 			exclude: ['node_modules/**'],
-	// 		}),
-	// 		strip(),
-	// 		json(),
-	// 		// postcss(postcssConfig),
-	// 		image(),
-	// 		// postcssInject2Css({
-	// 		// 	exclude: /\/node_modules\//
-	// 		// }),
-	// 		terser(),
-	// 	],
-	// },
+	{
+		input: 'src/index.ts',
+		output: [
+			{
+				file: 'dist/umd/bundle.js',
+				format: 'umd',
+				name: 'rcPlugin',
+				sourcemap: true,
+			},
+		],
+		plugins: [
+			del({ targets: 'dist/*' }),
+			typescript(),
+			resolve(),
+			commonjs(),
+			babel({
+				extensions: ['.ts', '.tsx'],
+				babelHelpers: 'runtime',
+				exclude: ['node_modules/**'],
+			}),
+			strip(),
+			json(),
+			// postcss(postcssConfig),
+			image(),
+			// postcssInject2Css({
+			// 	exclude: /\/node_modules\//
+			// }),
+			terser(),
+		],
+	},
 	{
 		input: 'src/index.ts',
 		output: [
@@ -68,13 +69,16 @@ export default [
 				preserveModulesRoot: 'src',
 				dir: 'dist/esm',
 			},
-			// {
-			// 	file: 'dist/cjs/bundle.js',
-			// 	format: 'cjs',
-			// },
+			{
+				dir: 'dist/cjs',
+				format: 'cjs',
+				preserveModules: true,
+				preserveModulesRoot: 'src',
+				exports: 'named',
+			},
 		],
 		plugins: [
-			del({ targets: 'dist/*' }),
+			// del({ targets: 'dist/*' }),
 			typescript(),
 			// smartAsset({
 			// 	url: "copy",
